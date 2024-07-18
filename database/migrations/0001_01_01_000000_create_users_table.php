@@ -17,7 +17,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->boolean('approved')->default(0)->nullable();
+            $table->string('remember_token')->nullable();
+            $table->string('consumer_key')->nullable();
+            $table->string('consumer_secret')->nullable();
+            $table->string('access_token')->nullable();
+            $table->string('access_token_secret')->nullable();
+            $table->string('bearer_token')->nullable();
+            // $table->rememberToken();
             $table->timestamps();
         });
 
